@@ -1,4 +1,8 @@
-# Diploma work
+# Praca dyplomowa w `latex`
+
+Do pisania pracy użyj [Overleaf](https://www.overleaf.com).
+
+Kod oraz wygenerowany tekst można sprawdzić pod [linkiem](https://www.overleaf.com/read/ptsdvrwfwgpg#1069b1).
 
 ## 1. Definiowanie podstawowych informacji pracy
 ### W pliku `mgr.cls` odszukaj:
@@ -19,7 +23,7 @@
 \newif\if@lic \@lictrue
 ```
 
-### W pliku `title_page.txt` zdefiniuj odpowiednie pola.
+### W pliku `title_page.tex` zdefiniuj odpowiednie pola:
 ```
 \title{Polski tytuł}
 \engtitle{Angielski tytuł}
@@ -31,7 +35,7 @@
 	\vspace{-6mm}%
 }
 
-\field{Kierunek stutiów}
+\field{Kierunek studiów}
 \specialisation{Specjalizacja kierunku}
 
 \supervisor{
@@ -61,7 +65,7 @@ W pliku `nazwa_pliku.tex` dodaj
 \section{nazwa_podrozdziału}
 ```
 
-> W celu definiowania pod-podrozdziałów, pod-pod-podrozdziałów itd., np.: użyj komend `\subsection{nazwa podrozdziału}`, `\subsubsection{nazwa pod-podrozdziału}`.
+> W celu definiowania pod-podrozdziałów, pod-pod-podrozdziałów itd. użyj komend `\subsection{nazwa podrozdziału}`, `\subsubsection{nazwa pod-podrozdziału}`.
 
 ## 3. Definiowanie rozdziału bez numeru (punkt_3.tex)
 1. Utwórz nowy plik `nazwa_pliku.tex` w katalogu `chapters`
@@ -84,7 +88,7 @@ W pliku `nazwa_pliku.tex` dodaj
 \section*{nazwa_podrozdziału}
 ```
 
-> W celu definiowania pod-podrozdziałów, pod-pod-podrozdziałów itd., np.: użyj komend `\subsection*{nazwa podrozdziału}`, `\subsubsection*{nazwa pod-podrozdziału}`.
+> W celu definiowania pod-podrozdziałów, pod-pod-podrozdziałów itd. użyj komend `\subsection*{nazwa podrozdziału}`, `\subsubsection*{nazwa pod-podrozdziału}`.
 
 ## 4. Dodawanie grafiki (punkt_4.tex)
 [https://www.overleaf.com/learn/latex/Inserting_Images](https://www.overleaf.com/learn/latex/Inserting_Images)
@@ -97,6 +101,7 @@ W pliku `nazwa_pliku.tex` dodaj
 Na rys.\myref{odnośnik} widoczny jest przedmiot... 
 \addimage{wielkość_grafiki}{figures/nazwa_pliku}{opis_grafiki}{odnośnik}
 ```
+> `wielkość_grafiki` - dopuszczalny zakres wartości: 0.0-1.0
 
 ## 5. Dodawanie listy (punkt_5.tex)
 [https://www.overleaf.com/learn/latex/Lists](https://www.overleaf.com/learn/latex/Lists)
@@ -169,11 +174,15 @@ W pliku `bibliography.bib` zdefiniuj pozycje, np.:
 ```
 
 ### Odniesienie do literatury
-W tekście odnieść się do zdefiniowanej literatury za pomocą ich identyfikatorów:
+W tekście odnieś się do zdefiniowanej literatury za pomocą ich identyfikatorów:
 ```
 \mycite{identyfikator}
 ```
 ### Przypis na dole strony
+Użyj polecenia 
+```
+\footnote{tekst przypisu na dole strony}
+```
 
 ## Modyfikacja czcionki (punkt_7.tex)
 [https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles](https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles)
@@ -197,6 +206,11 @@ W tekście odnieść się do zdefiniowanej literatury za pomocą ich identyfikat
 ### Hiperłącze
 ```
 \href{adres_strony}{widoczny_tekst}
+```
+
+### Cytat
+```
+\enquote{tekst_w_cudzysłowie}
 ```
 
 Rodzaje modyfikacje można mieszać zagnieżdżając je.
