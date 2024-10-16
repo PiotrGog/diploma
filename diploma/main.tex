@@ -1,0 +1,130 @@
+\documentclass[fleqn]{mgr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage{icomma}
+\DeclareQuoteAlias{dutch}{polish}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[flushleft]{threeparttable}
+\usepackage{tikz}
+\usepackage{pgfplots}\pgfplotsset{compat=1.7}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{color, colortbl}
+\usepackage[toc,page]{appendix}
+\usepackage{courier}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes,matrix,arrows,chains,automata}
+
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+\setlist[description]{%
+  topsep=1pt,%
+  itemsep=-3pt,%
+  font={\footnotesize},%
+}
+
+\newcommand{\inlinecode}{\begingroup
+  \catcode`_=12 \docodelst}
+\newcommand{\docodelst}[1]{%
+  {\fontfamily{cmtt}\selectfont{}#1}%
+  \endgroup
+}
+
+\newcommand{\addimage}[4]{ %
+	\begin{figure}[!ht] %
+	\centering %
+	\includegraphics[width=#1\textwidth]{#2} %
+	\caption{#3} %
+	\label{#4} %
+	\end{figure} %
+}
+
+\newcommand{\myref}[1]{\@~\ref{#1}}
+\newcommand{\mycite}[1]{~\cite{#1}}
+
+\addto\captionspolish{%
+	\renewcommand\appendixtocname{Dodatek}
+	\renewcommand\appendixname{Dodatek}
+	\renewcommand\appendixpagename{Dodatki}
+}
+
+\Urlmuskip=0mu plus 1mu
+\definecolor{custom-gray}{gray}{0.2}
+\definecolor{custom-gray-bg}{gray}{0.95}
+\definecolor{custom-green}{RGB}{0, 200, 0}
+
+
+\lstdefinestyle{customPython}{
+	language=Python,
+	backgroundcolor=\color{custom-gray-bg},
+	keywordstyle=\color{blue},
+	basicstyle=\footnotesize,
+	breakatwhitespace=true,
+	breaklines=true,
+	commentstyle=\color{custom-green},
+	numbers=left,
+	numberstyle=\tiny\color{custom-gray},
+	showspaces=false,
+	tabsize=4
+}
+
+\lstdefinestyle{customText}{
+	backgroundcolor=\color{custom-gray-bg},
+	showspaces=false,
+	basicstyle = \footnotesize\ttfamily
+}
+
+\lstset{style=customText}
+\lstset{escapeinside={<@}{@>}}
+
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+\newcommand{\circleR}{\textsuperscript{\textregistered}}
+
+\includeonly{
+	chapters/punkt_2,
+	chapters/punkt_3,
+	chapters/punkt_4,
+	chapters/punkt_5,
+	chapters/punkt_6,
+	chapters/punkt_7,
+}
+
+\input{title_page}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\include{chapters/punkt_2}
+\include{chapters/punkt_3}
+\include{chapters/punkt_4}
+\include{chapters/punkt_5}
+\include{chapters/punkt_6}
+\include{chapters/punkt_7}
+
+\newpage
+
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+
+\end{document}
